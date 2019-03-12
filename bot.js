@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 //^\/coolguys$
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /(^\/sus|^\/seizeproperty)/; //basically gonna make a large regex
+      botRegex = /(^\/sus|^\/seizeproperty|^\/hello|^\/wink|^\/starry|^\/fuckyoudiscreetly|^\/fight|^\/fliptable|^\/snipe|^\/castrate|^\/ohm|^\/love)/; //basically gonna make a large regex
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
