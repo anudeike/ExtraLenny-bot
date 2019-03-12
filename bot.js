@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 //^\/coolguys$
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /nigger/;
+      botRegex = /(nigger|nigga)/;
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
