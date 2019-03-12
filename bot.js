@@ -6,11 +6,11 @@ var botID = process.env.BOT_ID;
 //^\/coolguys$
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /(nigger|nigga|^\/send)/;
+      botRegex = /^\/send/; //basically gonna make a large regex
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(request.text);
     this.res.end();
   } else {
     console.log("don't care");
@@ -19,10 +19,32 @@ function respond() {
   }
 }
 
-function postMessage() {
+//function that will search a dictionary for the right key
+function chooseMessage(req){
+  //create a dictionary to store all of the faces and the keys
+  var dict = {
+    '/send':"ya woke bruh"
+  };
+
+  //if the req is a key in the dict return the msg
+  if(req in dict){
+    return dict[req];
+  }else{
+    return 'its not in our database';
+  }
+
+
+
+
+
+
+}
+function postMessage(requ) {
   var botResponse, options, body, botReq;
 
-  botResponse = 'yo, thats a really bad word bro - stop saying it';
+
+
+  botResponse = chooseMessage(requ);
 
   options = {
     hostname: 'api.groupme.com',
