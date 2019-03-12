@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sample GroupMe NodeJS Callback Bot
 
 ## Introduction
@@ -147,3 +148,9 @@ Then navigate to `http://127.0.0.1:5000/` in a browser.
 
 ## All done! Go play around and make the bot your own.
 
+=======
+# ExtraLenny-bot
+Welcome to the very official (ish) groupme Extra Lenny Bot!
+
+I am more than 50% sure this works 100% of the time!
+>>>>>>> 849d63cf69196b936876e5884ac0f24c2d089bb9
