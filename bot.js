@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 //^\/coolguys$
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/send/; //basically gonna make a large regex
+      botRegex = /(^\/sus|^\/seizeproperty)/; //basically gonna make a large regex
 
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -22,13 +22,35 @@ function respond() {
 //function that will search a dictionary for the right key
 function chooseMessage(req){
   //create a dictionary to store all of the faces and the keys
-  var dict = {
-    '/send':"ya woke bruh"
+  var lennyFaces = {
+    "/seizeproperty":"(☭ ͜ʖ ☭)",
+    "/schleep":"(ᴗ ͜ʖ ᴗ)",
+    "/sus":"(͠≖ ͜ʖ͠≖)",
+    "/wink":"( ͡~ ͜ʖ ͡°)",
+    "/starry":"✧･ﾟ: *✧･ﾟ:*( ͡ꈍ ͜ʖ̫ ͡ꈍ )*:･ﾟ✧*:･ﾟ✧",
+    "/hello":"( ° ͜ʖ °)",
+    "/fuckyoudiscreetly":"┬┴┬┴┤ ͜ʖ ͡°)╭∩╮├┬┴┬┴",
+    "/fight":"╭∩╮(▀̿Ĺ̯▀̿ ̿)ᕗ",
+    "/fliptable":"(╯ຈل͜ຈ) ╯︵ ┻━┻",
+    "/snipe":"╾━╤デ╦︻(▀̿Ĺ̯▀̿ ̿)",
+    "/ohm":"乁(ᴗ ͜ʖ ᴗ)ㄏ",
+    "/wink_shrug":"¯\_( ͡~ ͜ʖ ͡°)_/¯",
+    "/love":"( ♥ 3 ♥)",
+    "/omw":"ᕕ( T ʖ̯ T)ᕗ",
+    "/zoom":"ε＝┏( ͡° ͜ʖ ͡°)┛",
+    "/blush":"✧･ﾟ: *✧･ﾟ♡*( ͡˘̴ ͜ ʖ̫ ͡˘̴ )*♡･ﾟ✧*:･ﾟ✧",
+    "/conductor":"༚┈❁┈*ﾟ♬:*( ͡≖ ل͜ ͡≖)*ﾟ♬:*┈❁┈༚",
+    "/lurk":"┬┴┬┴┤ ͜ʖ ͡°) ├┬┴┬┴",
+    "/ohshit":"┬┴┤( ͡⚆ل͜├┬┴┬",
+    "/castrate":"｡*ﾟ+.*.｡(っ ͡° ل͜ ͡°)っ✂╰⋃╯",
+    "/securethebag":"(ง ͠° ͟ل͜ ͡°)ง[̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]",
+    "/idk":"¯\_(⊙_ʖ⊙)_/¯",
+    "/sad":"( ཀ ʖ̯ ཀ)"
   };
 
   //if the req is a key in the dict return the msg
-  if(req in dict){
-    return dict[req];
+  if(req in lennyFaces){
+    return lennyFaces[req];
   }else{
     return 'its not in our database';
   }
